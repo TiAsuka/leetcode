@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>392.判断子序列</h1>
+</body>
+<script>
+    var isSubsequence = function(s, t) {
+        let si = s.length;
+        let ti = t.length;
+        let m = 0;
+        let n = 0;
+        console.log(si,ti,m,n)
+        while(m<si && n<ti){
+            if(s[m] === t[n]){
+                m++;
+            }
+            n++
+        }
+    return m === si
+};
+
+console.log(isSubsequence("bc","bac"))
+</script>
+</html>
