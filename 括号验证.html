@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var string = "(2){[3(2)]}"
+        var arr = ['(', ')', '{', '}', '[', ']']
+        var arr1 = [];
+
+        const pairs = new Map([
+            [')', '('],
+            [']', '['],
+            ['}', '{']
+        ]);
+
+        for (let k of string) {
+            if (arr.includes(k)) {
+                if (pairs.has(k)) {
+                    if (!arr1.length || arr1[arr1.length - 1] !== pairs.get(k)) {
+                        console.log(false)
+                    }
+                    arr1.pop();
+                } else {
+                    arr1.push(k);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

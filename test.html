@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var test = function(s){
+        let str = '';
+        for(let i = 0;i<s.length;i++){
+            let temp = s[i].toLowerCase();
+            if(temp.charCodeAt()>=97&&temp.charCodeAt()<=122 || temp >= 0&&temp<=10&&temp!=' '){
+                str+=temp;
+                console.log(str)
+            }
+        }
+        console.log(str)
+        let arr = str.split('');
+        let s1 = arr.join('')
+        let s2 = arr.reverse().join('')
+        console.log(s1)
+        console.log(s2)
+        if(s1==s2){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    console.log(test("A man, a plan, a canal: Panama"))
+</script>
+</html>

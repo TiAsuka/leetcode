@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="input">
+            <input class="min" type="text">-
+            <input class="max" type="text">
+        </div>
+        <button class="ran">随机生成</button>
+        <p>随机数的结果是:<span class="res">00</span></p>
+    </div>
+</body>
+<style>
+    html,body{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    .box{
+        text-align:center;
+        padding-top:10px;
+        border-radius:20px;
+        margin:200px auto;
+        height:300px;
+        width:500px;
+        background-color: #ffeeee;
+    }
+    .input{
+        width:500px;
+        height:150px;
+    }
+    .box .input input{
+        box-sizing: border-box;
+        padding-left:50px;
+        font-size:25px;
+        width:200px;
+        flex:1;
+        height:100px;
+    }
+    .ran{
+        height:50px;
+        width:80px;
+    }
+</style>
+<script>
+    var min = document.querySelector(".min")
+    var max = document.querySelector(".max")
+    var btn = document.querySelector(".ran");
+    var res = document.querySelector('.res')
+    btn.addEventListener('click',function(){
+        var mi = Number(min.value)
+        var ma = Number(max.value);
+        if(mi>ma){
+            var num = getRandom(ma,mi)
+        }else if(ma>mi){
+            var num = getRandom(mi,ma)
+        }else{
+            var num=mi;
+        }
+        res.innerHTML = num;
+    })
+    function getRandom(min,max){
+        return Math.floor((Math.random()*(max-min+1))+min);
+    }
+</script>
+</html>
