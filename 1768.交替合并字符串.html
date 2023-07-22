@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>交替合并字符串</h1>
+</body>
+<script>
+    var word1 = "ace"
+    var word2 = "bdfgh"
+    let date1 = new Date();
+    var mergeAlternately = function (word1, word2) {
+        let length1 = word1.length;
+        let length2 = word2.length;
+        let min = Math.min(length1,length2);
+        let str = ""
+        for(let i = 0; i < min;++i){
+            str+=word1[i]+word2[i]
+        }
+        return str+merge(word1,word2)
+    }
+    var merge = function(word1,word2){
+        if(word1.length >= word2.length){
+            return word1.slice(word2.length,word1.length)
+        }else{
+            return word2.slice(word1.length,word2.length)
+        }
+    }
+    console.log(mergeAlternately( word1, word2 ))
+    var mergeAlternately2 = function(word1, word2) {
+        const m = word1.length, n = word2.length;
+        let i = 0, j = 0;
+
+        const ans = [];
+        while (i < m || j < n) {
+            if (i < m) {
+                ans.push(word1[i]);
+                ++i;
+            }
+            if (j < n) {
+                ans.push(word2[j]);
+                ++j;
+            }
+        }
+        return ans.join('');
+        };
+    console.log(mergeAlternately2(word1,word2))
+
+</script>
+</html>

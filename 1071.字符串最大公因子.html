@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>字符串最大公因子</h1>
+</body>
+<script>
+    let str1 = "ABABABABAB";
+    let str2 = "ABAB"
+    var gcbOfString = function(str1, str2){
+        if(str1+str2 !== str2+str1){
+            return ""
+        }
+        return str1.slice(0,gcb(str1.length,str2.length))
+    }
+    var gcb = function(a,b) {
+        if(b == 0){
+            return a
+        }
+        return gcb(b,a%b)
+    }
+    console.log(gcbOfString(str1,str2))
+</script>
+</html>
